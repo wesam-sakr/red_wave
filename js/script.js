@@ -38,11 +38,8 @@ $(document).ready(function () {
     margin: 20,
     responsiveClass: true,
     rtl: dirAr,
-    nav: true,
+    nav: false,
     // loop: true,
-    // animateIn: 'fadeInLeft',
-    // navText: [`<i class="fa-solid fa-chevron-left"></i>`, `<i class="fa-solid fa-chevron-right"></i>`],
-    // stagePadding: 80,
     responsive: {
       0: {
         items: 1,
@@ -55,10 +52,6 @@ $(document).ready(function () {
       }
     }
   });
-
-  var vidHeight = $('#vid .video-wrap').outerHeight(true)
-  $('.transparent').css('height', vidHeight);
-
 });
 
 // scroll to top page

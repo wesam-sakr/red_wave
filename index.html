@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Red Wave Contracting</title>
+    <title>Red Wave</title>
     <link rel="icon" href="images/logo.svg" />
 
     <!-- font awesome cdn link  -->
@@ -38,7 +38,6 @@
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css" />
-    <!-- <link rel="stylesheet" href="css/style-En.css" title="ltr"> -->
   </head>
 
   <body>
@@ -137,7 +136,7 @@
                     our clients
                   </p>
                 </div>
-                <span class="slideCount">01</span>
+                <span class="slideCount">02</span>
               </div>
               <div class="item">
                 <div class="content">
@@ -149,10 +148,10 @@
                     our clients
                   </p>
                 </div>
-                <span class="slideCount">01</span>
+                <span class="slideCount">03</span>
               </div>
             </div>
-            <a href="services.html" class="btn custom-btn">
+            <a href="services.html" class="btn custom-btn mt-3">
               <span>Our Services</span>
             </a>
             <div class="content ms-auto" style="width: fit-content;">
@@ -207,8 +206,11 @@
     <section class="about bg-white">
       <div class="container-fluid position-relative">
         <div class="row gy-3 align-items-center">
-          <div class="col-md-6 col-lg-5">
-            <img src="images/about.png" alt="">
+          <div class="col-md-6 col-lg-6">
+            <div class="about-img position-relative rounded-5 overflow-hidden">
+              <div class="overlay"></div>
+              <img src="images/about.png" alt="">
+            </div>
           </div>
           <div class="col-md-6 col-lg-6">
             <h3 class="fw-bold">Who We Are</h3>
@@ -287,10 +289,76 @@
       </div>
     </section>
 
+    <!-- Working mechanism section --->
+    <section class="working-mechanism position-relative bg-white">
+      <div class="container-fluid position-relative">
+        <h3 class="secTitle fw-bold text-center">Our Values</h3>
+        <div class="">
+          <div class="row gy-3 row-cols-2 row-cols-md-4 row-cols-lg-5 justify-content-between">
+            <div class="col">
+              <div class="val">
+                <div class="valWrapper">
+                  <div class="valIcon">
+                    <img src="images/Excellence.svg" alt="" />
+                  </div>
+                </div>
+                <div class="arrow-down"></div>
+                <h6 class="valName">Excellence</h6>
+              </div>
+            </div>
+            <div class="col">
+              <div class="val">
+                <div class="valWrapper">
+                  <div class="valIcon">
+                    <img src="images/Innovation.svg" alt="" />
+                  </div>
+                </div>
+                <div class="arrow-down"></div>
+                <h6 class="valName">Innovation</h6>
+              </div>
+            </div>
+            <div class="col">
+              <div class="val">
+                <div class="valWrapper">
+                  <div class="valIcon">
+                    <img src="images/Reliability.svg" alt="" />
+                  </div>
+                </div>
+                <div class="arrow-down"></div>
+                <h6 class="valName">Reliability</h6>
+              </div>
+            </div>
+            <div class="col">
+              <div class="val">
+                <div class="valWrapper">
+                  <div class="valIcon">
+                    <img src="images/Sustainability.svg" alt="" />
+                  </div>
+                </div>
+                <div class="arrow-down"></div>
+                <h6 class="valName">Sustainability</h6>
+              </div>
+            </div>
+            <div class="col">
+              <div class="val">
+                <div class="valWrapper">
+                  <div class="valIcon">
+                    <img src="images/Customer Focus.svg" alt="" />
+                  </div>
+                </div>
+                <div class="arrow-down"></div>
+                <h6 class="valName">Customer Focus</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- services section --->
     <section class="services bg-main text-white position-relative">
       <div class="container-fluid">
-        <h3 class="secTitle fw-bold text-center mb-5">Our Services</h3>
+        <h3 class="secTitle fw-bold text-center mb-4">Our Services</h3>
       </div>
       <div class="container-fluid" style="padding-inline-end: 1rem;">
         <div class="owl-carousel">
@@ -336,16 +404,21 @@
           </div>
         </div>
       </div>
+      <a href="services.html" class="btn custom-btn mt-3 m-auto">
+        <span>More</span>
+      </a>
     </section>
 
 
     <!-- footer section --->
     <footer>
       <div class="footer-nav">
-        <img class="imgTop" src="images/Logo.svg" />
         <div class="container-fluid">
+          <div class="imgFooterWrapper position-relative">
+            <img class="imgTop" src="images/Logo.svg" />
+          </div>
           <div class="navbar navbar-expand-lg">
-            <div class="d-flex w-100 align-items-center justify-content-between">
+            <div class="d-md-flex w-100 align-items-center justify-content-between">
               <ul class="navbar-nav m-0">
                 <li class="nav-item">
                   <a
