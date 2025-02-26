@@ -22,6 +22,7 @@ $('#loading').fadeOut(3000);
 
 // owl carousel
 $(document).ready(function () {
+
   $(".hero-sec .owl-carousel").owlCarousel({
     nav: false,
     autoplay: false,
@@ -39,7 +40,6 @@ $(document).ready(function () {
     responsiveClass: true,
     rtl: dirAr,
     nav: false,
-    // loop: true,
     responsive: {
       0: {
         items: 1,
@@ -52,6 +52,28 @@ $(document).ready(function () {
       }
     }
   });
+
+  $('.reviews .owl-carousel').owlCarousel({
+    center: true,
+    loop: true,
+    autoplay: true,
+    // margin: 16,
+    responsiveClass: true,
+    rtl: dirAr,
+    nav: false,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      600: {
+        items: 2,
+      },
+      1000: {
+        items: 3,
+      }
+    }
+  });
+
 });
 
 // scroll to top page
