@@ -1,11 +1,8 @@
 :root {
    /* Colors: */
    --main-color: #AA0C0C;
-   --light-color: #3D7F32;
+   --light-color: #123f7a;
    --secondry-color: #02234D;
-   --box: #0B7567;
-   --linear: transparent linear-gradient(90deg, #006050 0%, #003A33 100%) 0% 0% no-repeat padding-box;
-   --linear2: transparent linear-gradient(180deg, #006050 0%, #003A33 100%) 0% 0% no-repeat padding-box;
    --rate: #FFBB00;
    --muted-text: #B4B4B4;
    --dark: #6E6E6E;
