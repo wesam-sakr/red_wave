@@ -1,8 +1,3 @@
-// $('.owl-carousel').addClass('owl-rtl')
-// $('html').attr('dir', 'rtl');
-// $('html').attr('lang', 'ar');
-// $('link[href="css/bootstrap.min.css"]').attr('href', 'css/bootstrap.rtl.min.css');
-
 // dir
 var bodyDir = $('body').css('direction')
 console.log(bodyDir)

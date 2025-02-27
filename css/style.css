@@ -107,7 +107,7 @@ a {
 }
 
 ul {
-   padding-left: 0rem !important;
+   padding-inline: 0rem !important;
    list-style: none;
    margin: 0;
 }
@@ -177,15 +177,11 @@ body {
 
 .loader {
    position: relative;
-   width: 100px;
+   width: 160px;
    letter-spacing: 2px;
    display: inline-block;
    box-sizing: border-box;
    animation: floating 1s ease-out infinite alternate;
-}
-
-.loader img {
-   width: 90px;
 }
 
 .loader::after {
@@ -370,6 +366,7 @@ label {
    display: flex;
    flex-direction: row-reverse;
    gap: .6rem;
+   padding-inline-start: 0;
 }
 
 .social-icons i {
