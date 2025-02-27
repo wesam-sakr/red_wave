@@ -153,78 +153,106 @@
     </section>
 
     <section class="calculator text-white">
-        <div class="container-fluid position-relative">
-            <div class="row gy-3 align-items-center">
-                <div class="col-md-6">
-                    <img src="images/calc.png" alt="">
+      <div class="container-fluid position-relative">
+        <div class="row gy-3 align-items-center">
+          <div class="col-md-6">
+            <img src="images/calc.png" alt="" />
+          </div>
+          <div class="col-md-6">
+            <h3 class="secTitle fw-bold mb-4">Calculator</h3>
+            <form onsubmit="calculateCost(event)">
+              <div class="row gy-4">
+                <div class="col-12">
+                  <div class="form-group">
+                    <label for="boatLength">Boat Length (ft)</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="boatLength"
+                      min="27"
+                      value="27"
+                      required
+                      oninput="hideResult()"
+                    />
+                  </div>
                 </div>
-                <div class="col-md-6">
-                    <h3 class="secTitle fw-bold mb-4">Calculator</h3>
-                    <form onsubmit="calculateCost(event)">
-                        <div class="row gy-4">
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <label for="boatLength">Boat Length (ft)</label>
-                                    <input type="number" class="form-control" id="boatLength" min="27" value="27" required oninput="hideResult()">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <label for="draftLength">Draft Length (ft)</label>
-                                    <input type="number" class="form-control" id="draftLength" min="1" required oninput="hideResult()">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <label for="lastClean">Last boat cleaning date</label>
-                                    <select class="form-control form-select" id="lastClean" required onchange="hideResult()">
-                                        <option value="less">Less than 6 months</option>
-                                        <option value="more">More than 6 months</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                        <button class="btn main-btn" type="submit">Result</button>
-                        <p id="result" style="display: none;"></p>  
-                    </form>
-                    <script>
-                        function calculateCost(event) {
-                            event.preventDefault(); // منع إعادة تحميل الصفحة
-                            
-                            let boatLength = parseFloat(document.getElementById("boatLength").value);
-                            let draftLength = parseFloat(document.getElementById("draftLength").value);
-                            let lastClean = document.getElementById("lastClean").value;
-                            let resultElement = document.getElementById("result");
-                            let pricePerFoot = 0;
+                <div class="col-12">
+                  <div class="form-group">
+                    <label for="draftLength">Draft Length (ft)</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="draftLength"
+                      min="1"
+                      required
+                      oninput="hideResult()"
+                    />
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label for="lastClean">Last boat cleaning date</label>
+                    <select
+                      class="form-control form-select"
+                      id="lastClean"
+                      required
+                      onchange="hideResult()"
+                    >
+                      <option value="less">Less than 6 months</option>
+                      <option value="more">More than 6 months</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <button class="btn main-btn" type="submit">Result</button>
+              <p id="result" style="display: none"></p>
+            </form>
+            <script>
+              function calculateCost(event) {
+                event.preventDefault();
 
-                            resultElement.style.display = "none";
-                        
-                            if (boatLength >= 27 && boatLength <= 32) {
-                                pricePerFoot = lastClean === "less" ? 8.56 : 10.48;
-                            } else if (boatLength >= 33 && boatLength <= 38) {
-                                pricePerFoot = lastClean === "less" ? 7.92 : 10.00;
-                            } else if (boatLength >= 39 && boatLength <= 46) {
-                                pricePerFoot = lastClean === "less" ? 7.28 : 9.20;
-                            } else if (boatLength > 46) {
-                                document.getElementById("result").innerText = "Please contact us for pricing.";
-                                return;
-                            } else {
-                                document.getElementById("result").innerText = "Please enter a valid boat length.";
-                                return;
-                            }
-                        
-                            let totalCost = boatLength * draftLength * 2 * pricePerFoot;
-                            document.getElementById("result").innerText = "Cost : " + totalCost.toFixed(2) + " dollars";
-                            resultElement.style.display = "block";
-                          }
-                            function hideResult() {
-                                document.getElementById("result").style.display = "none";
-                            }
-                    </script>
-                </div>
-            </div>
+                let boatLength = parseFloat(
+                  document.getElementById("boatLength").value
+                );
+                let draftLength = parseFloat(
+                  document.getElementById("draftLength").value
+                );
+                let lastClean = document.getElementById("lastClean").value;
+                let resultElement = document.getElementById("result");
+                let pricePerFoot = 0;
+
+                resultElement.style.display = "none";
+
+                if (boatLength >= 27 && boatLength <= 32) {
+                  pricePerFoot = lastClean === "less" ? 8.56 : 10.48;
+                } else if (boatLength >= 33 && boatLength <= 38) {
+                  pricePerFoot = lastClean === "less" ? 7.92 : 10.0;
+                } else if (boatLength >= 39 && boatLength <= 46) {
+                  pricePerFoot = lastClean === "less" ? 7.28 : 9.2;
+                } else if (boatLength > 46) {
+                  resultElement.innerText = "Please contact us for pricing.";
+                  resultElement.style.display = "block";
+                  return;
+                } else {
+                  resultElement.innerText = "Please enter a valid boat length.";
+                  resultElement.style.display = "block";
+                  return;
+                }
+
+                let totalCost = boatLength * draftLength * 2 * pricePerFoot;
+                resultElement.innerText =
+                  "Cost : " + totalCost.toFixed(2) + " dollars";
+                resultElement.style.display = "block";
+              }
+
+              function hideResult() {
+                document.getElementById("result").style.display = "none";
+              }
+            </script>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- footer section --->

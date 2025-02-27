@@ -80,5 +80,3 @@ $(window).scroll(function () {
     btn_top.hide();
   }
 });
-
-new WOW().init();
