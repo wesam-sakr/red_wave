@@ -85,7 +85,7 @@
                   <a class="nav-link" href="about.html">About Us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="services.html">Services</a>
+                  <a class="nav-link" href="services.html">Services</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="contact.html">Contact Us</a>
@@ -115,7 +115,7 @@
           <div class="container-fluid position-relative">
             <div class="item pb-4">
               <div class="content w-100 text-center">
-                <h2>Services</h2>
+                <h2>Terms</h2>
               </div>
             </div>
           </div>
@@ -123,108 +123,41 @@
       </section>
     </div>
 
-    <!-- about section -->
-    <section class="about bg-white">
+    <!-- Terms section -->
+    <section class="terms bg-white py-5">
       <div class="container-fluid position-relative">
-        <div class="row gy-3 align-items-center">
-          <div class="col-md-6 col-lg-6">
-            <h3 class="secTitle fw-bold">Naval Media Hull Cleaning</h3>
-            <p class="about-content">
-              A clean hull is essential for optimal vessel performance, fuel
-              efficiency, and longevity. Our marine hull cleaning service
-              effectively removes accumulated marine growth, reducing drag and
-              improving speed. This results in enhanced fuel efficiency and
-              smoother maneuverability. By preventing corrosion and structural
-              damage, we help extend the lifespan of your vessel while
-              maintaining its operational efficiency. Our cleaning methods are
-              environmentally friendly, ensuring minimal impact on marine
-              ecosystems. Let our team handle the maintenance so you can focus
-              on smooth sailing.
+        <ol class="p-0 d-flex flex-column gap-4">
+          <li>
+            <p>Introduction</p>
+            <p>Welcome To Red Wave.By Accessing And Using Our Website And Services, You Agree To Comply With The Following Terms And Conditions. If You Do Not Agree, Please Refrain From Using Our Services. </p>
+          </li>
+          <li>
+            <p>Services Provided</p>
+            <p>Red Wave Specializes In Maritime Services, Including But Not Limited To: 
+              <ul class="mt-3">
+                <li> Hull Cleaning </li>
+                <li> Marine Procurement </li>
+                <li> Professional Diver Services </li>
+                <li> Boat Services And Rentals </li>
+                <li> Periodic Naval Inspections (Coming Soon) </li>
+              </ul>
+              We Reserve The Right To Modify Or Discontinue Any Service Without Prior Notice.
             </p>
-          </div>
-          <div class="col-md-6 col-lg-6">
-            <div class="about-img position-relative rounded-5 overflow-hidden">
-              <div class="overlay"></div>
-              <img src="images/cargo-container-ship.png" alt="" />
-            </div>
-          </div>
-        </div>
+          </li>
+          <li>
+            <p>User Responsibilities</p>
+            <p>You Must Provide Accurate Information When Using Our Services. Unauthorized Use Of Our Services For Illegal Purposes Is Strictly Prohibited. You Agree To Abide By All Maritime Regulations And Safety Standards. </p>
+          </li>
+          <li>
+            <p>Pricing And Payments</p>
+            <p>Prices For Our Services Are Displayed On The Website And Are Subject To Change. Payments Must Be Made In Full Before Service Delivery Unless Otherwise Agreed. We Accept Multiple Payment Methods, And All Transactions Are Securely Processed.</p>
+          </li>
+          <li>
+            <p>Cancellations And Refunds</p>
+            <p>Cancellations Must Be Made At Least 48 Hours Before The Scheduled Service. Refunds Will Be Processed Based On Our Cancellation Policy. No Refunds Will Be Issued For Services Already Rendered.</p>
+          </li>
+        </ol>
       </div>
-    </section>
-
-    <section class="calculator text-white">
-        <div class="container-fluid position-relative">
-            <div class="row gy-3 align-items-center">
-                <div class="col-md-6">
-                    <img src="images/calc.png" alt="">
-                </div>
-                <div class="col-md-6">
-                    <h3 class="secTitle fw-bold mb-4">Calculator</h3>
-                    <form onsubmit="calculateCost(event)">
-                        <div class="row gy-4">
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <label for="boatLength">Boat Length (ft)</label>
-                                    <input type="number" class="form-control" id="boatLength" min="27" value="27" required oninput="hideResult()">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <label for="draftLength">Draft Length (ft)</label>
-                                    <input type="number" class="form-control" id="draftLength" min="1" required oninput="hideResult()">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <label for="lastClean">Last boat cleaning date</label>
-                                    <select class="form-control form-select" id="lastClean" required onchange="hideResult()">
-                                        <option value="less">Less than 6 months</option>
-                                        <option value="more">More than 6 months</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                        <button class="btn main-btn" type="submit">Result</button>
-                        <p id="result" style="display: none;"></p>  
-                    </form>
-                    <script>
-                        function calculateCost(event) {
-                            event.preventDefault(); // منع إعادة تحميل الصفحة
-                            
-                            let boatLength = parseFloat(document.getElementById("boatLength").value);
-                            let draftLength = parseFloat(document.getElementById("draftLength").value);
-                            let lastClean = document.getElementById("lastClean").value;
-                            let resultElement = document.getElementById("result");
-                            let pricePerFoot = 0;
-
-                            resultElement.style.display = "none";
-                        
-                            if (boatLength >= 27 && boatLength <= 32) {
-                                pricePerFoot = lastClean === "less" ? 8.56 : 10.48;
-                            } else if (boatLength >= 33 && boatLength <= 38) {
-                                pricePerFoot = lastClean === "less" ? 7.92 : 10.00;
-                            } else if (boatLength >= 39 && boatLength <= 46) {
-                                pricePerFoot = lastClean === "less" ? 7.28 : 9.20;
-                            } else if (boatLength > 46) {
-                                document.getElementById("result").innerText = "Please contact us for pricing.";
-                                return;
-                            } else {
-                                document.getElementById("result").innerText = "Please enter a valid boat length.";
-                                return;
-                            }
-                        
-                            let totalCost = boatLength * draftLength * 2 * pricePerFoot;
-                            document.getElementById("result").innerText = "Cost : " + totalCost.toFixed(2) + " dollars";
-                            resultElement.style.display = "block";
-                          }
-                            function hideResult() {
-                                document.getElementById("result").style.display = "none";
-                            }
-                    </script>
-                </div>
-            </div>
-        </div>
     </section>
 
     <!-- footer section --->
@@ -248,13 +181,13 @@
                   <a class="nav-link" href="about.html">About Us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="services.html">Services</a>
+                  <a class="nav-link" href="services.html">Services</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="contact.html">Contact Us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="terms.html">Terms</a>
+                  <a class="nav-link active" href="terms.html">Terms</a>
                 </li>
               </ul>
               <nav aria-label="Social Media Links">
